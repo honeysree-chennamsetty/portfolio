@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Honey Sree | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #0d1117;
+      color: #f0f6fc;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #0d1117;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid #21262d;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+    }
+    nav .nav-links a {
+      color: #c9d1d9;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav .nav-links a:hover {
+      color: #58a6ff;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6rem 4rem 2rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 50%;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    .hero-text h2 {
+      font-size: 1.8rem;
+      color: #58a6ff;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+    .roles {
+      font-size: 1.2rem;
+      color: #c9d1d9;
+      height: 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .roles span {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .roles span.active {
+      display: inline;
+      animation: fadeText 0.5s ease-in-out;
+    }
+    @keyframes fadeText {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero-img {
+      animation: fadeInRight 1s ease forwards;
+      animation-delay: 1.2s;
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    .hero-img img {
+      width: 320px;
+      border-radius: 10px;
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 1rem;
+      color: #58a6ff;
+      cursor: pointer;
+    }
+    .scroll-down .arrow {
+      display: block;
+      font-size: 2rem;
+      animation: bounce 1.5s infinite;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0d1117;
+      color: #8b949e;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text, .hero-img {
+        max-width: 100%;
+      }
+      .hero-img img {
+        margin-top: 2rem;
+        width: 200px;
+        }
+    }
+      .exp-card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUpCard 1s ease forwards;
+    }
+    .exp-card:nth-child(1) { animation-delay: 0.2s; }
+    .exp-card:nth-child(2) { animation-delay: 0.4s; }
+    .exp-card:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUpCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .highlight-rolling {
+      background: linear-gradient(90deg, #58a6ff, #f0f6fc, #58a6ff);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: rollTextLoop 3s linear infinite;
+    }
+
+    @keyframes rollTextLoop {
+      0% {
+        background-position: 200% center;
+      }
+      100% {
+        background-position: -200% center;
+      }
+    }
+    .rolling-words-loop {
+  display: inline-block;
+  min-width: 180px;
+  height: 1.4em;
+  position: relative;
+}
+
+.rolling-words-loop .word {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.rolling-words-loop .word.active {
+  opacity: 1;
+  position: relative;
+}
+.skills-section {
+  background-color: #161b22;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.skills-section h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.custom-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: #c9d1d9;
+}
+.custom-skill img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s;
+}
+.custom-skill img:hover {
+  transform: scale(1.2);
+}
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Honey Sree</h1>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">Who I am</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Me</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hello! It's me</h2>
+      <h1>Honey Sree Chennamsetty</h1>
+      <div class="roles">
+        <span class="active">Software Engineer</span>
+        <span>DevOps Enthusiast</span>
+        <span>Cloud Practitioner</span>
+        <span>AI/ML Explorer</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="chennam.jpg" alt="Honey Sree">
+    </div>
+    <div class="scroll-down" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' });">
+      <div>Experience</div>
+      <div class="arrow">&#8595;</div>
+    </div>
+  </section>
+
+ <section id="experience" style="min-height: 100vh; background-color: #161b22; padding: 4rem;">
+  <h2 style="color: #ffffff; font-size: 2rem; text-align: center; margin-bottom: 2rem;">Experience</h2>
+  <div style="color: #d3d3d3; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+    <div class="exp-card">
+  <h3 style="color: white; font-weight: 600;">R&amp;D Summer Intern – Ericsson</h3>
+  <p style="margin: 0.5rem 0 1rem;"><em>Jun 2024 – Oct 2024 | Stockholm, Sweden</em></p>
+  <ul style="padding-left: 1.2rem;">
+    <li>Designed infrastructure monitoring strategy with Grafana to optimize system health.</li>
+    <li>Automated provisioning and decommissioning workflows using Python &amp; shell scripting.</li>
+    <li>Participated in cloud infrastructure performance tuning and cost optimization.</li>
+  </ul>
+</div>
+
+    <div class="exp-card">
+  <h3 style="color: white; font-weight: 600;">Frontend Developer – Devtown Training Program</h3>
+  <p style="margin: 0.5rem 0 1rem;"><em>Sep 2022 – Nov 2022 | India</em></p>
+  <ul style="padding-left: 1.2rem;">
+      <li>Designed and implemented a university website with a user-friendly interface and enhanced functionality.</li>
+      <li>Optimized layouts to improve accessibility and user experience.</li>
+      <li>Structured content to facilitate effective communication.</li>
+    </ul>
+  </div>
+
+    <div class="exp-card">
+  <h3 style="color: white; font-weight: 600;">Python Development Intern – Sparkway Technologies</h3>
+  <p style="margin: 0.5rem 0 1rem;"><em>Jan 2021 – May 2021 | India</em></p>
+  <ul style="padding-left: 1.2rem;">
+      <li>Designed Python modules for machine learning techniques.</li>
+      <li>Collaborated on data preprocessing for improved system performance.</li>
+    </ul>
+  </div>
+  </section>
+  <section id="about" style="background-color: #0d1117; padding: 4rem 2rem;">
+  <h2 style="color: #ffffff; font-size: 2rem; text-align: center; margin-bottom: 3rem;"><span class="highlight-rolling"> Who I Am</span></h2>
+  <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+    <div style="flex: 1; min-width: 280px; text-align: center;">
+      <img src="sree.jpg" alt="Honey Sree" style="width: 250px; border-radius: 10px;">
+    </div>
+    <div style="flex: 2; min-width: 300px; color: #d3d3d3;">
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+  I'm Honey Sree Chennamsetty, a passionate software engineer with a strong background in
+ <strong>Python development</strong>, <strong>DevOps practices</strong>, and <strong>cloud platforms</strong>.
+  I've contributed to system optimization and automation through internships at Ericsson and other organizations. My goal is to build scalable systems and drive meaningful process improvements with a focus on usability and performance.
+</p>
+    </div>
+</section>
+<section id="skills" class="skills-section">
+  <h2>Skills</h2>
+  <div class="skills-icons">
+    <div class="custom-skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      Python
+    </div>
+    <div class="custom-skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+      C++
+    </div>
+    <div class="custom-skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+      Java
+    </div>
+    <div class="custom-skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+      MySQL
+    </div>
+    <div class="custom-skill">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+  AWS
+</div>
+    <div class="custom-skill">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+  Power BI
+</div>
+
+    <div class="custom-skill">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg" alt="Grafana">
+      Grafana
+    </div>
+  </div>
+</section>
+<section id="contact" style="background-color: #161b22; padding: 4rem 2rem;">
+  <h2 style="text-align: center; color: #ffffff; font-size: 2rem; margin-bottom: 2rem;">Contact Me</h2>
+  <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; color: #c9d1d9;">
+    <input type="text" placeholder="Your Name" required style="padding: 0.75rem; border: none; border-radius: 5px;">
+    <input type="email" placeholder="Your Email" required style="padding: 0.75rem; border: none; border-radius: 5px;">
+    <textarea placeholder="Your Message" rows="5" required style="padding: 0.75rem; border: none; border-radius: 5px;"></textarea>
+    <button type="submit" style="background-color: #58a6ff; color: white; border: none; padding: 0.75rem; border-radius: 5px; cursor: pointer; font-weight: 600;">
+      Send Message
+    </button>
+  </form>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Honey Sree Chennamsetty</p>
+  </footer>
+
+  <script>
+    const roles = document.querySelectorAll('.roles span');
+    let currentIndex = 0;
+    setInterval(() => {
+      roles[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % roles.length;
+      roles[currentIndex].classList.add('active');
+    }, 2000);
+    const aboutWords = document.querySelectorAll('.about-rolling .word');
+    let aboutIndex = 0;
+    setInterval(() => {
+      aboutWords[aboutIndex].classList.remove('active');
+      aboutIndex = (aboutIndex + 1) % aboutWords.length;
+      aboutWords[aboutIndex].classList.add('active');
+    }, 2000);
+  </script>
+</body>
+</html>
