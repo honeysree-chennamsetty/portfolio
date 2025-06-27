@@ -242,6 +242,49 @@
 .custom-skill img:hover {
   transform: scale(1.2);
 }
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: #161b22;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  min-height: 300px;
+  color: #c9d1d9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(88, 166, 255, 0.3);
+}
+
+.project-card h3 {
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-card ul {
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
 
 
   </style>
@@ -357,6 +400,96 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg" alt="Grafana">
       Grafana
     </div>
+    <div class="custom-skill">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">
+  .NET
+</div>
+<section id="projects" style="background-color: #0d1117; padding: 4rem 2rem;">
+  <h2 style="color: #ffffff; font-size: 2rem; text-align: center; margin-bottom: 2rem;">Projects</h2>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <h3>COVID-19 Simulation</h3>
+      <p><em>Nov 2022 – Feb 2023</em></p>
+      <ul>
+        <li>Built Python simulation using Markov chains for COVID spread modeling.</li>
+        <li>Visualized societal impacts with interactive charts.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Continuous Integration Environment</h3>
+      <p><em>Jan 2023 – Mar 2023</em></p>
+      <ul>
+        <li>Set up Jenkins and Selenium pipelines.</li>
+        <li>Generated test reports for CI/CD workflows.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Disease Spread Module</h3>
+      <p><em>Aug 2021 – Oct 2021</em></p>
+      <ul>
+        <li>Created WEKA-based web module with graphs and analytics.</li>
+        <li>Performed tree-based statistical analysis.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Here’s the Drink</h3>
+      <p><em>Jan 2022 – Mar 2022</em></p>
+      <ul>
+        <li>Designed Android app for checking product availability.</li>
+        <li>No login or signup required for use.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Overleaf vs CoCalc</h3>
+      <p><em>Jun 2022 – Oct 2022</em></p>
+      <ul>
+        <li>Compared LaTeX tools using usability heuristics.</li>
+        <li>Survey-based evaluation for better user choice.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Android Tourist Guide</h3>
+      <p><em>Sep 2020 – Nov 2020</em></p>
+      <ul>
+        <li>Guided tourists with maps based on real-time location.</li>
+        <li>Simple, mobile-first experience for travelers.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Ship of Fool’s Game</h3>
+      <p><em>Oct 2021 – Dec 2021</em></p>
+      <ul>
+        <li>Built Python dice game using OOP principles.</li>
+        <li>Included scoring logic and multiple player support.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<section id="resume" style="background-color: #161b22; padding: 4rem 2rem; text-align: center;">
+  <h2 style="color: #ffffff; font-size: 2rem; margin-bottom: 1.5rem;">Want to know more?</h2>
+  <p style="color: #c9d1d9; margin-bottom: 2rem;">Click below to download my full resume.</p>
+  <a href="Resume_Honeysree.pdf" download style="
+      display: inline-block;
+      background-color: #58a6ff;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    " onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+    Download Resume
+  </a>
+</section>
+
   </div>
 </section>
 <section id="contact" style="background-color: #161b22; padding: 4rem 2rem;">
